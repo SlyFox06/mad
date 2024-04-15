@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+tools:context=".MainActivity">
+<TextView
+android:id="@+id/usernameText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="50dp"
+android:text="username: "
+android:textSize="23dp"/>
+<EditText
+android:id="@+id/username"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="40dp"
+android:layout_toRightOf="@+id/usernameText"
+android:textSize="23dp"/>
+<TextView
+android:id="@+id/passwordText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@+id/usernameText"
+android:layout_marginTop="30dp"
+android:text="password: "
+android:textSize="23dp"/>
+<EditText
+android:id="@+id/password"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/username"
+android:layout_marginTop="12dp"
+android:layout_toRightOf="@+id/passwordText"
+android:textSize="23dp"/>
+<Button
+android:id="@+id/loginBtn"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="login"
+android:textSize="23dp"
+android:paddingVertical="10dp"
+android:paddingHorizontal="20dp"
+android:layout_centerHorizontal="true"
+android:layout_below="@id/passwordText"
+android:layout_marginTop="50dp"
+/>
+</RelativeLayout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+<TableLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:stretchColumns="*"
+
+android:layout_alignParentBottom="true"
+android:layout_margin="15dp">
+<TableRow>
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="1" />
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="2" />
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="3" />
+</TableRow>
+<TableRow>
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="4" />
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="5" />
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="6" />
+</TableRow>
+<TableRow>
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="7" />
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+
+android:text="8" />
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="9" />
+</TableRow>
+<TableRow>
+<Button
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:layout_margin="10dp"
+android:text="0" />
+</TableRow>
+</TableLayout>
+</RelativeLayout>
