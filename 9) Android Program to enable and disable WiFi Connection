@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:layout_centerInParent="true">
+<Button
+android:id="@+id/enable"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Enable Wifi"
+android:textSize="25dp"/>
+<Button
+android:id="@+id/disable"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Disable Wifi"
+android:textSize="25dp"/>
+</LinearLayout>
+</RelativeLayout>
+
+//Main Activity.java 
+package com.atharv.q8; // Your Package name 
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+private WifiManager wifiManager;
+Button enableBtn, disableBtn;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+enableBtn = (Button) findViewById(R.id.enable);
+disableBtn = (Button) findViewById(R.id.disable);
+enableBtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+enableWifi();
+}
+});
+disableBtn.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+disableWifi();
+}
+});
+}
+// Method to enable Wi-Fi
+public void enableWifi() {
+if (!wifiManager.isWifiEnabled()) {
+wifiManager.setWifiEnabled(true);
+Toast.makeText(this, "Wi-Fi enabled", Toast.LENGTH_SHORT).show();
+}
+}
+public void disableWifi() {
+if (wifiManager.isWifiEnabled()) {
+wifiManager.setWifiEnabled(false);
+Toast.makeText(this, "Wi-Fi disabled", Toast.LENGTH_SHORT).show();
+}
+}}
+}
+}
+;
+
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
