@@ -1,0 +1,40 @@
+//activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity"
+android:orientation="vertical">
+<DatePicker
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/dp" />
+</LinearLayout>
+
+//MainActivty.java
+package com.example.myapplication;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.DatePicker;
+import android.widget.Toast;
+public class MainActivity extends Activity {
+DatePicker datePicker;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+datePicker = findViewById(R.id.dp);
+datePicker.setOnDateChangedListener(new
+DatePicker.OnDateChangedListener() {
+@Override
+public void onDateChanged(DatePicker view, int year, int
+monthOfYear, int dayOfMonth) {
+String selectedDate = dayOfMonth + "/" + (monthOfYear + 1)
++ "/" + year;
+Toast.makeText(MainActivity.this, "Selected Date: " +
+selectedDate, Toast.LENGTH_SHORT).show();
+}
+});
+}
+}
